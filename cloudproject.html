@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algo360 - One Page Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        nav {
+            width: 100%;
+            background: #1a73e8;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            padding: 60px;
+            text-align: center;
+            background: #e8f0fe;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            color: #1a73e8;
+            margin-bottom: 15px;
+        }
+
+        section {
+            padding: 40px 70px;
+        }
+
+        section h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 15px 0;
+            background: white;
+            border-radius: 8px;
+        }
+
+        pre {
+            background: #222;
+            color: #00ff90;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav>
+    <div class="logo">Algo360</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sorting">Sorting</a></li>
+        <li><a href="#datastructures">Data Structures</a></li>
+        <li><a href="#timecomplexity">Time Complexity</a></li>
+        <li><a href="#code">Code</a></li>
+    </ul>
+</nav>
+
+<!-- HOME SECTION -->
+<section id="home" class="hero">
+    <h1>Welcome to Algo360</h1>
+    <p>Your complete guide to Algorithms & Data Structures</p>
+</section>
+
+<section>
+    <h2>About Algo360</h2>
+    <p>
+        Algo360 is a fully static educational website created using only HTML and CSS.
+        It teaches core topics of Algorithms and Data Structures in a simple and visual way.
+        The website is hosted locally on my PC and exposed globally using LocalXpose tunneling.
+    </p>
+</section>
+
+<!-- SORTING SECTION -->
+<section id="sorting">
+    <h2>Sorting Algorithms</h2>
+
+    <div class="card">
+        <h3>Bubble Sort</h3>
+        <p>Bubble sort compares adjacent elements and swaps them if needed.</p>
+        <p><b>Time Complexity:</b> O(n²)</p>
+    </div>
+
+    <div class="card">
+        <h3>Selection Sort</h3>
+        <p>Finds minimum element and places it at the correct position.</p>
+        <p><b>Time Complexity:</b> O(n²)</p>
+    </div>
+
+    <div class="card">
+        <h3>Merge Sort</h3>
+        <p>Divide and Conquer algorithm that splits and merges arrays.</p>
+        <p><b>Time Complexity:</b> O(n log n)</p>
+    </div>
+
+    <div class="card">
+        <h3>Quick Sort</h3>
+        <p>Uses pivot element to partition the array.</p>
+        <p><b>Time Complexity:</b> O(n log n)</p>
+    </div>
+</section>
+
+<!-- DATA STRUCTURE SECTION -->
+<section id="datastructures">
+    <h2>Data Structures</h2>
+
+    <div class="card"><h3>Arrays</h3><p>Fixed-size sequential collection of similar elements.</p></div>
+    <div class="card"><h3>Linked Lists</h3><p>Nodes connected using pointers.</p></div>
+    <div class="card"><h3>Stacks</h3><p>LIFO structure used in recursion, undo operations, etc.</p></div>
+    <div class="card"><h3>Queues</h3><p>FIFO structure used in scheduling and buffering.</p></div>
+    <div class="card"><h3>Trees</h3><p>Hierarchical structure used in search operations.</p></div>
+    <div class="card"><h3>Graphs</h3><p>Used to represent networks and relationships.</p></div>
+</section>
+
+<!-- TIME COMPLEXITY SECTION -->
+<section id="timecomplexity">
+    <h2>Time Complexity</h2>
+
+    <div class="card">
+        <p><b>O(1):</b> Constant time</p>
+        <p><b>O(log n):</b> Logarithmic time</p>
+        <p><b>O(n):</b> Linear time</p>
+        <p><b>O(n log n):</b> Merge Sort, Quick Sort</p>
+        <p><b>O(n²):</b> Bubble, Selection, Insertion Sort</p>
+    </div>
+</section>
+
+<!-- CODE SECTION -->
+<section id="code">
+    <h2>Sample C++ Code</h2>
+
+    <div class="card">
+        <h3>Bubble Sort</h3>
+        <pre><code>
+void bubbleSort(int arr[], int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j] > arr[j+1]){
+                swap(arr[j], arr[j+1]);
+            }
+        }
+    }
+}
+        </code></pre>
+    </div>
+
+    <div class="card">
+        <h3>Binary Search</h3>
+        <pre><code>
+int binarySearch(int arr[], int n, int key){
+    int l=0, r=n-1;
+    while(l<=r){
+        int mid = (l+r)/2;
+        if(arr[mid] == key) return mid;
+        else if(arr[mid] < key) l = mid+1;
+        else r = mid-1;
+    }
+    return -1;
+}
+        </code></pre>
+    </div>
+</section>
+
+</body>
+</html>
