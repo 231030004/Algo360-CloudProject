@@ -1,0 +1,1 @@
+Algo360 – A fully static educational website built using HTML, CSS, and JavaScript. It explains Algorithms, Data Structures, and Time Complexity with a smooth sliding UI. Hosted locally and exposed to the internet using LocalXpose as part of a Cloud Computing project.
